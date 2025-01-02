@@ -31,7 +31,7 @@
 .select-Container {
   display: flex;
   justify-content: center;
-  aling-items: center;
+  align-items: center;
 }
 
 .select {

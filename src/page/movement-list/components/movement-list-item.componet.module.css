@@ -1,0 +1,25 @@
+.row {
+    display: grid;
+    grid-template-columns: var(--column-size);
+    gap: 1px;
+  }
+  
+  .data-cell {
+    font-size: 16px;
+    padding: 15px;
+    color: var(--secondary_color);
+    align-self: center;
+  }
+  
+  .row:nth-child(odd) {
+    background-color: #eeeeee;
+  }
+  
+  .aling-right {
+    text-align: end;
+  }
+
+  .red{
+    color: #ff0000;
+  }
+  

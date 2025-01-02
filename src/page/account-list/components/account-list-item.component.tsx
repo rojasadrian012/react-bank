@@ -2,6 +2,7 @@ import { appRoutes } from "@/core/router";
 import { AccountItemVM } from "../account-item.vm";
 import classes from "./account-list-item.component.module.css";
 import { generatePath, Link, useNavigate } from "react-router-dom";
+import { useAccountContext } from "@/shared/account";
 
 interface Props {
   accountItem: AccountItemVM;
@@ -13,6 +14,7 @@ const ACTION_MOVEMENTS = "2";
 
 export const AccountListItemComponent: React.FC<Props> = ({ accountItem }) => {
   const navigate = useNavigate();
+  const { setAccount } = useAccountContext();
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
     switch (e.target.value) {
       case ACTION_TRANSFER:
@@ -21,6 +23,7 @@ export const AccountListItemComponent: React.FC<Props> = ({ accountItem }) => {
         );
         break;
       case ACTION_MOVEMENTS:
+        setAccount(accountItem)
         navigate(generatePath(appRoutes.movements, { id: accountItem.id }));
         break;
     }
@@ -29,7 +32,10 @@ export const AccountListItemComponent: React.FC<Props> = ({ accountItem }) => {
   return (
     <div className={classes.row}>
       <span className={`${classes.dataCell} ${classes.bold}`}>
-        <Link to={generatePath(appRoutes.movements, { id: accountItem.id })}>
+        <Link 
+          to={generatePath(appRoutes.movements, { id: accountItem.id })}
+          onClick={ () => setAccount(accountItem) }  
+        >
           {accountItem.iban}
         </Link>
       </span>
