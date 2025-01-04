@@ -25,3 +25,19 @@ export const validdIbanField = (iban: string): FieldValidationResult => {
 
     return buildValidationFieldSuccessResult()
 }
+
+export const validAccountIdField = (value: string):FieldValidationResult=>{
+    if(!isStringValidInformed(value)){
+        return buildValidationFieldErrorResult(REQUIRED_FIELD_MESSAGE)
+    }
+
+    return buildValidationFieldSuccessResult()
+}
+
+export const validateNameField = (name: string): FieldValidationResult=>{
+    if(!isStringValidInformed(name)){
+        return buildValidationFieldErrorResult(REQUIRED_FIELD_MESSAGE)
+    }
+
+    return buildValidationFieldSuccessResult()
+}
