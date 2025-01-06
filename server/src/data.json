@@ -108,5 +108,39 @@
       "accountId": "3"
     }
   ],
-  "transfer": []
+  "transfer": [
+    {
+      "accountId": "2",
+      "amount": "100",
+      "concept": "Compra del mes",
+      "iban": "hola",
+      "transferDate": "Sun Jan 05 2025",
+      "realTransferDate": "",
+      "name": "Adrian Portillo Rojas",
+      "notes": "",
+      "id": 1
+    },
+    {
+      "accountId": "2",
+      "amount": "100",
+      "concept": "Compra del mes",
+      "iban": "hola",
+      "transferDate": "Sun Jan 05 2025",
+      "realTransferDate": "",
+      "name": "Adrian Portillo Rojas",
+      "notes": "",
+      "id": 2
+    },
+    {
+      "accountId": "2",
+      "amount": "100",
+      "concept": "Compra del mes",
+      "iban": "DE91100000000123456789",
+      "transferDate": "Sun Jan 05 2025",
+      "realTransferDate": "",
+      "name": "Adrian Portillo Rojas",
+      "notes": "",
+      "id": 3
+    }
+  ]
 }

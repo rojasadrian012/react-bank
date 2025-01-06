@@ -1,32 +1,23 @@
-import { createEmptyCredencialsFormErrors, CredentialsFormErrors } from "./credentials.vm";
-
-interface ValidationResult {
-    succeeded: boolean;
-    errors: CredentialsFormErrors
-}
+import { FormValidationResult } from "@/common/validations";
+import { Credentials, CredentialsFormErrors } from "./credentials.vm";
+import {
+  validatePasswordField,
+  validateUserField,
+} from "./login-field.validations";
 
 export const validateForm = (
-    credentials: CredentialsFormErrors
-): ValidationResult => {
-    let stateValidation: ValidationResult = {
-        succeeded: true,
-        errors: createEmptyCredencialsFormErrors()
-    }
+  credentials: Credentials
+): FormValidationResult<CredentialsFormErrors> => {
+  const fieldValidationResults = [
+    validateUserField(credentials.user),
+    validatePasswordField(credentials.password),
+  ];
 
-    if (!credentials.user) {
-        stateValidation.succeeded = false
-        stateValidation.errors = {
-            ...stateValidation.errors,
-            user: "El usuario es requerido"
-        }
-    }
-
-    if (!credentials.password) {
-        stateValidation.succeeded = false
-        stateValidation.errors = {
-            ...stateValidation.errors,
-            password: "La contraseña es requerida"
-        }
-    }
-    return stateValidation
-}
+  return {
+    succeeded: fieldValidationResults.every((f) => f.succeeded),
+    errors: {
+      user: fieldValidationResults[0].errorMessage ?? "",
+      password: fieldValidationResults[1].errorMessage ?? "",
+    },
+  };
+};

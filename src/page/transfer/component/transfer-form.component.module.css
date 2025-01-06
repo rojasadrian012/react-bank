@@ -1,0 +1,45 @@
+.error{
+    color: var(--error_color);
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-container{
+    border: none;
+    border-bottom: 1px solid var(--secondary_color);
+    padding: 40px 0;
+}
+
+.button{
+    margin: 10px 0 10px 320px;
+}
+
+.form-container p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.form-container div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.form-container div p{
+    margin: 0 10px;
+}
+
+.form-container label{
+    margin-right: 20x;
+    min-width: 300px;
+    text-align: right;
+}
+
+.large{
+    width: 400px;
+}
+
+.small{
+    width: 100px;
+}
