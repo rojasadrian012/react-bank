@@ -28,8 +28,12 @@ export const MovementListPage: React.FC = () => {
         <div className={classes.headerContainer}>
           <h1>Saldos y Últimos Movimientos</h1>
           <div>
-            <p>SALDO DISPONIBLE</p>
-            <p className={classes.balance}>{movements[0]?.balance} €</p>
+            {id != "all" && (
+              <>
+                <p>SALDO DISPONIBLE</p>
+                <p className={classes.balance}>{movements[0]?.balance} €</p>
+              </>
+            )}
           </div>
         </div>
         <div className={classes.info}>
