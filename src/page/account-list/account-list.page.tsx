@@ -5,6 +5,8 @@ import classes from "./account-list.page.module.css";
 import { AccountListTableComponent } from "./components";
 import { getAccountsList } from "./api/account-data.api";
 import { mapAccountListFromApiToVm } from "./account-list.mapper";
+import { useNavigate } from "react-router-dom";
+import { PageHeader } from "@/common/components/page-header/page-header";
 
 export const AccountListPage: React.FC = () => {
   const [accountList, setAccountList] = React.useState<AccountItemVM[]>([]);
@@ -15,13 +17,16 @@ export const AccountListPage: React.FC = () => {
     );
   }, []);
 
+  const navigate = useNavigate();
+  const createAccount = ()=> navigate('/create-account')
+
   return (
     <AppLayout>
       <div className={classes.root}>
-        <div className={classes.headerContainer}>
+        <PageHeader>
           <h1>Mis Cuentas</h1>
-          <button>Agregar nueva cuenta</button>
-        </div>
+          <button onClick={createAccount}>Agregar nueva cuenta</button>
+        </PageHeader>
         <AccountListTableComponent accountList={accountList} />
       </div>
     </AppLayout>

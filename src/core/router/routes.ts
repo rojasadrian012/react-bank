@@ -11,5 +11,6 @@ export const appRoutes = {
     movements: '/movements/:id',
     movementsNoId: '/movements',
     transfer: routePrefixes.transfer,
-    transferFromAccount: `${routePrefixes.transfer}/:id`
+    transferFromAccount: `${routePrefixes.transfer}/:id`,
+    createAccount: '/create-account'
 }

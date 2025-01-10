@@ -1,0 +1,52 @@
+.root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.error{
+  color: var(--error_color);
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-container div:first-of-type{
+  padding-top: 40px
+}
+
+.form-container div:last-of-type{
+  border: none;
+  border-bottom: 1px solid var(--secondary_color);
+  padding-bottom: 40px
+}
+
+.button{
+  margin: 0 auto;
+}
+
+.form-container p {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.form-container div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  padding-left: 3rem
+}
+
+.form-container div p{
+  margin: 0 10px;
+}
+
+.form-container div label{
+  margin-right: 20px;
+  min-width: 300px;
+  text-align: right;
+}
+
+.small{
+  width: 250px;
+}

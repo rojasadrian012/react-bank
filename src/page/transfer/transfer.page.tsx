@@ -6,6 +6,7 @@ import classes from "./transfer.page.module.css";
 import { getAccountList, saveTransfer } from "./api";
 import { mapAccountApiToVm, mapTransferVmToApi } from "./transfer.mapper";
 import { useParams } from "react-router-dom";
+import { PageHeader } from "@/common/components/page-header/page-header";
 
 export const TransferPage: React.FC = () => {
   const [accountList, setAccountList] = React.useState<AccountVm[]>([]);
@@ -31,7 +32,9 @@ export const TransferPage: React.FC = () => {
   return (
     <AppLayout>
       <div className={classes.container}>
-        <h1 className={classes.title}>Transferencias Nacionales</h1>
+        <PageHeader>
+          <h1>Transferencias Nacionales</h1>
+        </PageHeader>
         <TransferFormComponent
           accountList={accountList}
           onTransfer={handleTransfer}
